@@ -47,5 +47,3 @@ function createBubbles() {
         }, i * 100); 
     }
 }
-
-

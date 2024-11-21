@@ -1,0 +1,70 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fdf0d5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.lock-screen, .container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lock-screen h1, .container h1 {
+    color: #ff7f50;
+    font-size: 2.5rem;
+}
+
+.lock-screen p, .container p {
+    color: #555;
+    font-size: 1.2rem;
+}
+
+.lock-screen input {
+    width: 60%;
+    padding: 10px;
+    font-size: 1rem;
+    margin: 10px 0;
+    border: 2px solid #ff7f50;
+    border-radius: 5px;
+    outline: none;
+}
+
+.lock-screen button {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.lock-screen button:hover {
+    background-color: #ffa07a;
+}
+
+.error-message {
+    color: red;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}

@@ -1,55 +1,15 @@
-// Daniel Shiffman
-// http://codingtra.in
-// https://youtu.be/CKeyIbT3vXI
+const correctPassword = "8683";
 
-class Particle {
-  constructor(x, y, hu, firework) {
-    this.pos = createVector(x, y);
-    this.firework = firework;
-    this.lifespan = 255;
-    this.hu = hu;
-    this.acc = createVector(0, 0);
-    if (this.firework) {
-      this.vel = createVector(0, random(-12, -8));
+function checkPassword() {
+    const inputPassword = document.getElementById("password").value;
+    const lockScreen = document.getElementById("lock-screen");
+    const birthdayContent = document.getElementById("birthday-content");
+    const errorMessage = document.getElementById("error-message");
+
+    if (inputPassword === correctPassword) {
+        lockScreen.classList.add("hidden"); // Ẩn màn hình khóa
+        birthdayContent.classList.remove("hidden"); // Hiển thị nội dung
     } else {
-      this.vel = p5.Vector.random2D();
-      this.vel.mult(random(2, 10));
+        errorMessage.textContent = "Sai mật khẩu! Thử lại nhé.";
     }
-  }
-
-  applyForce(force) {
-    this.acc.add(force);
-  }
-
-  update() {
-    if (!this.firework) {
-      this.vel.mult(0.9);
-      this.lifespan -= 4;
-    }
-    this.vel.add(this.acc);
-    this.pos.add(this.vel);
-    this.acc.mult(0);
-  }
-
-  done() {
-    if (this.lifespan < 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  show() {
-    colorMode(HSB);
-
-    if (!this.firework) {
-      strokeWeight(2);
-      stroke(this.hu, 255, 255, this.lifespan);
-    } else {
-      strokeWeight(4);
-      stroke(this.hu, 255, 255);
-    }
-
-    point(this.pos.x, this.pos.y);
-  }
 }

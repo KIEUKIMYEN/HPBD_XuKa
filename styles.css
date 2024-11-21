@@ -56,3 +56,9 @@
         opacity: 0;
     }
 }
+
+#birthday-image {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+}

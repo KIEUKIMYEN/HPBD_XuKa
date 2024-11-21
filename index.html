@@ -13,6 +13,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            position: relative;
         }
 
         #lock-screen {
@@ -49,10 +50,6 @@
             display: none;
         }
 
-        .hidden {
-            display: none;
-        }
-
         #birthday-content h1 {
             font-size: 2em;
             color: #333;
@@ -86,17 +83,19 @@
     <div>
         <input type="password" id="password" placeholder="Nhập mật khẩu">
         <button onclick="checkPassword()">Mở khóa</button>
-        <div id="error-message"></div>
+        <div id="error-message" style="color: red;"></div>
     </div>
 </div>
 
 <div id="birthday-content" class="hidden">
     <h1>Chúc Mừng Sinh Nhật Chị XuKa!</h1>
     <p>Chúc chị tuổi mới thành công, hạnh phúc, luôn vui vẻ và có thật nhiều sức khoẻ. Chúc 2Bar luôn đông khách, chờ ngày em ra 2Bar nhậu đến 4h sáng với chị nhennnnnnn</p>
+    <!-- Chèn ảnh nếu cần -->
+    <img src="your-image.jpg" alt="Happy Birthday" width="300">
 </div>
 
 <script>
-    const correctPassword = "8683";
+    const correctPassword = "8683"; // Mật khẩu đúng
 
     function checkPassword() {
         const inputPassword = document.getElementById("password").value;
@@ -106,8 +105,8 @@
 
         if (inputPassword === correctPassword) {
             // Ẩn màn hình khóa và hiển thị nội dung sinh nhật
-            lockScreen.classList.add("hidden");
-            birthdayContent.classList.remove("hidden");
+            lockScreen.style.display = "none";
+            birthdayContent.style.display = "block";
 
             // Khởi tạo hiệu ứng pháo bông
             const fireworks = new Fireworks({

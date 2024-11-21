@@ -7,7 +7,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: column;
 }
 
 .container {
@@ -67,17 +66,4 @@ button:hover {
     100% {
         transform: translateY(-100vh) rotate(360deg);
     }
-}
-
-/* Định dạng hình ảnh */
-.image-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-#xukaImage {
-    width: 150px;  /* Kích thước có thể thay đổi */
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

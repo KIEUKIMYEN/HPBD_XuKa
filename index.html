@@ -99,4 +99,69 @@
         const birthdayContent = document.getElementById("birthday-content");
         const errorMessage = document.getElementById("error-message");
 
-        if (inputPassword === correctPassword) 
+        if (inputPassword === correctPassword) {
+            // Ẩn màn hình khóa và hiển thị nội dung sinh nhật
+            lockScreen.classList.add("hidden");
+            birthdayContent.classList.remove("hidden");
+
+            // Khởi tạo hiệu ứng pháo bông
+            const fireworks = new Fireworks({
+                speed: 3,
+                acceleration: 2,
+                friction: 0.98,
+                gravity: 1.5,
+                particles: 100,     // Số lượng hạt pháo bông
+                trace: 3,           // Độ dài vệt sáng của pháo
+                explosion: 5,       // Độ bùng nổ của pháo
+                brightness: 1,      // Độ sáng của pháo
+            });
+
+            fireworks.start(); // Bắt đầu hiệu ứng pháo bông
+
+            // Tạo hiệu ứng bong bóng
+            createBubbles();
+        } else {
+            errorMessage.textContent = "Sai mật khẩu! Thử lại nhé.";
+        }
+    }
+
+    // Tạo bong bóng
+    function createBubbles() {
+        const bubbleContainer = document.createElement("div");
+        bubbleContainer.classList.add("bubbles");
+        document.body.appendChild(bubbleContainer);
+
+        const bubbleCount = 30; // Số lượng bong bóng
+
+        for (let i = 0; i < bubbleCount; i++) {
+            let bubble = document.createElement("div");
+            bubble.style.position = "absolute";
+            bubble.style.width = `${Math.random() * 50 + 30}px`;
+            bubble.style.height = bubble.style.width;
+            bubble.style.backgroundColor = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.6)`;
+            bubble.style.borderRadius = "50%";
+            bubble.style.left = `${Math.random() * window.innerWidth}px`;
+            bubble.style.bottom = `0px`;
+            bubble.style.animation = `bubbleAnimation ${Math.random() * 5 + 3}s linear infinite`;
+
+            bubbleContainer.appendChild(bubble);
+
+            // Keyframe animation cho bong bóng bay lên
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes bubbleAnimation {
+                    0% {
+                        transform: translateY(0) rotate(0deg);
+                    }
+                    100% {
+                        transform: translateY(-500px) rotate(360deg);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    }
+</script>
+
+</body>
+</html>

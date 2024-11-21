@@ -1,64 +1,56 @@
-/* Ẩn nội dung sinh nhật ban đầu */
-.hidden {
-    display: none;
+
+body {
+  background-color: #9eb6ff;
+  justify-content: center;
+  font-family: arial;
+  margin: auto;
 }
 
-/* Thiết kế màn hình khóa */
-#lock-screen {
-    text-align: center;
-    margin-top: 50px;
+img {
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#lock-screen input {
-    padding: 10px;
-    font-size: 16px;
-    margin-top: 10px;
-    width: 200px;
+
+h1 {
+  font-size: 300%;
+  text-align: center;
+}
+body#a {
+  align-items: center;
 }
 
-#lock-screen button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 10px;
-    cursor: pointer;
+
+#button {
+  display: flex;
+  width: 30%;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin: auto;
+  margin-top: 30px;
 }
 
-/* Thiết kế nội dung sinh nhật */
-#birthday-content {
-    text-align: center;
-    margin-top: 50px;
+#button:hover {background-color: #3e8e41}
+
+#button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
-#birthday-content h1 {
-    color: #ff4081;
-}
-
-/* CSS cho bong bóng */
-.balloon {
-    position: absolute;
-    bottom: 0;
-    z-index: 999;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
-    width: 20px;
-    height: 20px;
-    animation: float 4s ease-in infinite;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(-100vh);
-        opacity: 0;
-    }
-}
-
-#birthday-image {
-    width: 300px;
-    height: auto;
-    margin-top: 20px;
+h1.made {
+  font-size: 200%;
+  margin-bottom: 30px;
+  color: #9eb6ff;
 }

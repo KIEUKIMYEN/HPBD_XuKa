@@ -1,38 +1,102 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chúc Mừng Sinh Nhật</title>
-
-    <!-- Thêm thư viện pháo bông -->
+    <!-- Thêm thư viện Fireworks.js -->
     <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/index.bundle.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffbf0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- Thêm thư viện bong bóng -->
-    <script src="https://cdn.jsdelivr.net/npm/balloon.js/dist/balloon.min.js"></script>
+        #lock-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 
-    <link rel="stylesheet" href="styles.css">
+        #lock-screen input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        #lock-screen button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #lock-screen button:hover {
+            background-color: #45a049;
+        }
+
+        #birthday-content {
+            display: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #error-message {
+            color: red;
+        }
+
+        #birthday-content h1 {
+            font-size: 2em;
+            color: #333;
+        }
+
+        #birthday-content p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    </style>
 </head>
-
 <body>
-    <div id="lock-screen">
-        <h2>Nhập mật khẩu để mở khóa lời chúc!</h2>
-        <input type="password" id="password" placeholder="Nhập mật khẩu..." />
-        <button onclick="checkPassword()">Xác nhận</button>
-        <p id="error-message"></p>
+
+<div id="lock-screen">
+    <div>
+        <input type="password" id="password" placeholder="Nhập mật khẩu">
+        <button onclick="checkPassword()">Mở khóa</button>
+        <div id="error-message"></div>
     </div>
+</div>
 
-    <div id="birthday-content" class="hidden">
-        <h1>Chúc Mừng Sinh Nhật Chị XuKa!</h1>
-        <p>Chúc chị tuổi mới thành công, hạnh phúc, luôn vui vẻ và có thật nhiều sức khoẻ.</p>
-        <p>Chúc 2Bar luôn đông khách, chờ ngày em ra 2Bar nhậu đến 4h sáng với chị nhennnnnnn!</p>
+<div id="birthday-content" class="hidden">
+    <h1>Chúc Mừng Sinh Nhật Chị XuKa!</h1>
+    <p>Chúc chị tuổi mới thành công, hạnh phúc, luôn vui vẻ và có thật nhiều sức khoẻ. Chúc 2Bar luôn đông khách, chờ ngày em ra 2Bar nhậu đến 4h sáng với chị nhennnnnnn</p>
+</div>
 
-        <!-- Vị trí chèn hình ảnh -->
-        <img src="path/to/image.jpg" alt="Chúc mừng Sinh Nhật" id="birthday-image" />
-    </div>
+<script>
+    const correctPassword = "8683";
 
-    <script src="script.js"></script>
-</body>
+    function checkPassword() {
+        const inputPassword = document.getElementById("password").value;
+        const lockScreen = document.getElementById("lock-screen");
+        const birthdayContent = document.getElementById("birthday-content");
+        const errorMessage = document.getElementById("error-message");
 
-</html>
+        if (inputPassword === correctPassword) 

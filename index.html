@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday</title>
+    <title>Chúc Mừng Sinh Nhật</title>
+
+    <!-- Thêm các thư viện cần thiết -->
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/index.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/balloon.js/dist/balloon.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div id="lock-screen" class="lock-screen">
-        <h1>🎉 Chào bạn! 🎂</h1>
-        <p>Nhập mật khẩu để mở món quà đặc biệt:</p>
-        <input type="password" id="password" placeholder="Nhập mật khẩu">
-        <button onclick="checkPassword()">Mở khóa 🎁</button>
-        <p id="error-message" class="error-message"></p>
+    <div id="lock-screen">
+        <h2>Nhập mật khẩu để mở khóa lời chúc!</h2>
+        <input type="password" id="password" placeholder="Nhập mật khẩu..." />
+        <button onclick="checkPassword()">Xác nhận</button>
+        <p id="error-message"></p>
     </div>
 
-    <!-- Content to be shown after password is correct -->
     <div id="birthday-content" class="hidden">
-        <div class="container">
-            <h1>🎊 Chúc Mừng Sinh Nhật Chị XuKa! 🎉</h1>
-            <p class="message">Chúc chị tuổi mới thành công, hạnh phúc, luôn vui vẻ và có thật nhiều sức khỏe. Chúc 2Bar luôn đông khách, chờ ngày em ra 2Bar nhậu đến 4h sáng với chị nhennnnnnn! 💖</p>
-            <img src="images/your-image.jpg" alt="Happy Birthday Image">
-        </div>
+        <h1>Chúc Mừng Sinh Nhật Chị XuKa!</h1>
+        <p>Chúc chị tuổi mới thành công, hạnh phúc, luôn vui vẻ và có thật nhiều sức khoẻ.</p>
+        <p>Chúc 2Bar luôn đông khách, chờ ngày em ra 2Bar nhậu đến 4h sáng với chị nhennnnnnn!</p>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
